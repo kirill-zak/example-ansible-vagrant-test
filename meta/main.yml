@@ -1,0 +1,18 @@
+galaxy_info:
+  role_name: example_ansible_vagrant_test
+  namespace: kirillzak
+  author: kirill-zak
+  description: Example role for test with molecule and vagrant driver
+
+  license: MIT
+
+  min_ansible_version: '2.1'
+
+  platforms:
+    - name: Debian
+      versions:
+        - "bookworm"
+
+  galaxy_tags: [nginx]
+
+dependencies: []

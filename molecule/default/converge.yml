@@ -1,0 +1,15 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+  pre_tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 600
+      changed_when: false
+      when: ansible_pkg_mgr == "apt"
+  tasks:
+  - name: "Include role"
+    ansible.builtin.include_role:
+      name: kirillzak.example_ansible_vagrant_test

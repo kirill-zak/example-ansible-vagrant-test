@@ -1,0 +1,14 @@
+---
+- name: Verify
+  hosts: all
+  become: true
+  tasks:
+    - name: Get nginx package status
+      ansible.builtin.package:
+        name: nginx
+        state: latest
+      register: package_facts
+
+    - name: Check nginx package status
+      ansible.builtin.assert:
+        that: "false == package_facts['changed']"
